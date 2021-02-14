@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Text Encryption</h1>
+    <form action="/image" method="POST" onsubmit="return onSubmit();" enctype="multipart/form-data">
+       <input id="input"  type="file" name="image">
+       <input id="password" type="password" name="password" placeholder="type key">
+       <button type="submit">Send</button>
+    </form>
+
+    <h1>Text Decryption</h1>
+    <form action="/image/decrypt" method="POST"  enctype="multipart/form-data">
+      <input type="file" name="encrypted" placeholder="Encrypt code">
+      <input type="password" name="password" placeholder="type key">
+      <button>Get Original</button>
+    </form>
+</body>
+<script>
+    
+    var input=document.getElementById('input')
+    var password=document.getElementById('password')
+
+    const onSubmit=()=>{
+
+        if(input.value && password.value){
+            return true;
+        }
+        else{
+            alert('Must select image and type key before send')
+            return false;
+        }
+
+    }
+
+
+</script>
+</html>
